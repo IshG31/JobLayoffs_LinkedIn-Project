@@ -1,0 +1,192 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7986,        184]
+NotebookOptionsPosition[      7064,        160]
+NotebookOutlinePosition[      7500,        177]
+CellTagsIndexPosition[      7457,        174]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Visualization on Jobs data
+\
+\>", "Text",
+ CellChangeTimes->{{3.9100253235051193`*^9, 
+  3.9100253306343703`*^9}},ExpressionUUID->"968c7640-dd97-4347-9273-\
+0b35de1c2dfd"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"JobsData", "=", 
+  RowBox[{
+  "Import", "[", 
+   "\"\<C:\\\\Users\\\\ISHIKA GUPTA\\\\Desktop\\\\MSBA Subjects\\\\Data \
+Storytelling\\\\BDI\\\\job_cleaned.csv\>\"", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Length", "[", "JobsData", "]"}]}], "Input",
+ CellChangeTimes->{{3.9100253386517954`*^9, 3.91002535017493*^9}, {
+  3.9100253883063955`*^9, 3.9100253971446295`*^9}, {3.910025451518998*^9, 
+  3.910025490322758*^9}, {3.9100259120043325`*^9, 3.9100259542272797`*^9}, {
+  3.910025999278045*^9, 3.910026019981824*^9}, {3.910026162511848*^9, 
+  3.910026173242357*^9}, {3.910037359244842*^9, 3.9100373663002434`*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"1b1cd005-04e1-4d4e-b69e-edbc60fa324a"],
+
+Cell[BoxData[
+ TemplateBox[<|"shortenedBoxes" -> TagBox[
+     RowBox[{"{", 
+       RowBox[{
+         RowBox[{"{", 
+           
+           RowBox[{"\"job_id\"", ",", "\"company_id\"", ",", "\"job_title\"", 
+             ",", "\"description\"", ",", "\"salary\"", ",", "\"work_type\"", 
+             ",", "\"location\"", ",", "\"experience_level\"", ",", 
+             "\"sponsored\"", ",", "\"currency\"", ",", 
+             "\"compensation_type\"", ",", "\"scraped\""}], "}"}], ",", 
+         TemplateBox[{"33245"}, "OutputSizeLimit`Skeleton"], ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"3958427", ",", "630152.`", ",", "\"Stylist/ Clorist\"", 
+             ",", "\"Karen Marie is looking for an awesome experienced \
+stylist! Are you looking for a relaxed yet proffesional environment to bring \
+current clients and build your book? We are looking for a full to part-time \
+stylist who has been established in Chicago for at least two years and is \
+liscensed with the state of Illinois. A stylist with a background in color, \
+extensions, make up artist and cutting would be great but we are open to \
+specialits as well!\"", ",", "57500.`", ",", "\"Full-time\"", ",", "\"IL\"", 
+             ",", "\"\"", ",", "0", ",", "\"USD\"", ",", "\"BASE_SALARY\"", 
+             ",", "1699057868"}], "}"}]}], "}"}], Short[#, 8]& ], "line" -> 5,
+    "sessionID" -> 19683167853578343400, "byteCount" -> 142880560, "size" -> 
+   8, "stored" -> False, "expr" -> Missing["NotStored"], "wrap" -> 
+   OutputSizeLimit`Defer, "version" -> 1|>,
+  "OutputSizeLimitTemplate"]], "Output",
+ CellChangeTimes->{{3.9100254848716793`*^9, 3.91002549499445*^9}, {
+   3.9100259874634295`*^9, 3.9100260052577724`*^9}, 3.910026177971943*^9, 
+   3.910037373841283*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"e512be99-8ae2-4c27-95b6-259b1d1909cc"],
+
+Cell[BoxData["33247"], "Output",
+ CellChangeTimes->{{3.9100254848716793`*^9, 3.91002549499445*^9}, {
+   3.9100259874634295`*^9, 3.9100260052577724`*^9}, 3.910026177971943*^9, 
+   3.910037373887947*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"8007b478-9224-4899-8636-48b809dc46e3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"BubbleChart", "[", 
+  RowBox[{
+   RowBox[{"JobsData", "[", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<experience_level\>\"", ",", "\"\<salary\>\"", ",", 
+      "\"\<work_type\>\""}], "}"}], "]"}], ",", 
+   RowBox[{"BubbleSizes", "->", 
+    RowBox[{"{", 
+     RowBox[{"0.02", ",", "0.02"}], "}"}]}], ",", 
+   RowBox[{"ChartLabels", "->", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Experience Level\>\"", ",", "\"\<Salary\>\""}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{
+  3.910025714229844*^9, {3.910025757870184*^9, 3.91002579542758*^9}, {
+   3.9100258267893257`*^9, 3.91002583155517*^9}, {3.9100373946672015`*^9, 
+   3.9100374267840085`*^9}, {3.910037460876967*^9, 3.910037475826223*^9}, {
+   3.910037526167475*^9, 3.9100375316943336`*^9}, {3.910037783393572*^9, 
+   3.910037788337854*^9}},ExpressionUUID->"8c5ef164-5e52-4ecd-a311-\
+8bf44aa68d65"],
+
+Cell[BoxData[
+ TemplateBox[<|"shortenedBoxes" -> TagBox[
+     RowBox[{"ScatterPlot3D", "[", 
+       RowBox[{
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{
+               RowBox[{"{", 
+                 
+                 RowBox[{
+                  "\"job_id\"", ",", "\"company_id\"", ",", "\"job_title\"", 
+                   ",", "\"description\"", ",", "\"salary\"", ",", 
+                   "\"work_type\"", ",", "\"location\"", ",", 
+                   "\"experience_level\"", ",", "\"sponsored\"", ",", 
+                   "\"currency\"", ",", "\"compensation_type\"", ",", 
+                   "\"scraped\""}], "}"}], ",", 
+               TemplateBox[{"33245"}, "OutputSizeLimit`Skeleton"], ",", 
+               RowBox[{"{", 
+                 
+                 RowBox[{
+                  "3958427", ",", "630152.`", ",", "\"Stylist/ Clorist\"", 
+                   ",", "\"Karen Marie is looking for an awesome experienced \
+stylist! Are you looking for a relaxed yet proffesional environment to bring \
+current clients and build your book? We are looking for a full to part-time \
+stylist who has been established in Chicago for at least two years and is \
+liscensed with the state of Illinois. A stylist with a background in color, \
+extensions, make up artist and cutting would be great but we are open to \
+specialits as well!\"", ",", "57500.`", ",", "\"Full-time\"", ",", "\"IL\"", 
+                   ",", "\"\"", ",", "0", ",", "\"USD\"", ",", 
+                   "\"BASE_SALARY\"", ",", "1699057868"}], "}"}]}], "}"}], 
+           "[", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"salary\"", ",", "\"experience_level\"", ",", 
+               "\"sponsored\""}], "}"}], "]"}], ",", 
+         RowBox[{"AxesLabel", "\[Rule]", 
+           RowBox[{"{", 
+             TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "}"}]}], ",", 
+         RowBox[{
+          "PlotLabel", "\[Rule]", 
+           "\"Salary vs. Experience Level vs. Sponsored\""}]}], "]"}], 
+     Short[#, 8]& ], "line" -> 10, "sessionID" -> 19683167853578343400, 
+   "byteCount" -> 142881224, "size" -> 8, "stored" -> False, "expr" -> 
+   Missing["NotStored"], "wrap" -> OutputSizeLimit`Defer, "version" -> 1|>,
+  "OutputSizeLimitTemplate"]], "Output",
+ CellChangeTimes->{{3.910025813875228*^9, 3.9100258338490305`*^9}, {
+   3.9100261885788994`*^9, 3.910026193879881*^9}, 3.91003739197641*^9, {
+   3.910037436392535*^9, 3.910037479354084*^9}},
+ CellLabel->"Out[10]=",ExpressionUUID->"5495af24-2c7e-4f59-a919-79a4e7caf568"]
+}, Open  ]]
+},
+WindowSize->{1152, 579.6},
+WindowMargins->{{
+  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"f2c3f6c2-f8f4-44d2-beb1-13f1bac5263e"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 181, 6, 58, "Text",ExpressionUUID->"968c7640-dd97-4347-9273-0b35de1c2dfd"],
+Cell[CellGroupData[{
+Cell[764, 30, 719, 12, 48, "Input",ExpressionUUID->"1b1cd005-04e1-4d4e-b69e-edbc60fa324a"],
+Cell[1486, 44, 1833, 31, 141, "Output",ExpressionUUID->"e512be99-8ae2-4c27-95b6-259b1d1909cc"],
+Cell[3322, 77, 279, 4, 32, "Output",ExpressionUUID->"8007b478-9224-4899-8636-48b809dc46e3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3638, 86, 876, 21, 28, "Input",ExpressionUUID->"8c5ef164-5e52-4ecd-a311-8bf44aa68d65"],
+Cell[4517, 109, 2531, 48, 158, "Output",ExpressionUUID->"5495af24-2c7e-4f59-a919-79a4e7caf568"]
+}, Open  ]]
+}
+]
+*)
+

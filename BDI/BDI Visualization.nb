@@ -1,0 +1,924 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     36814,        916]
+NotebookOptionsPosition[     32708,        849]
+NotebookOutlinePosition[     33101,        865]
+CellTagsIndexPosition[     33058,        862]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Salary", "=", 
+  RowBox[{
+  "Import", "[", "\"\</Users/aliak/Desktop/filtered_salary.csv\>\"", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.90995968707898*^9, 3.909959712362876*^9}, {
+  3.9099604324442387`*^9, 3.909960434941629*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"c8c2222f-c0be-4f31-95e4-fdc7ec1f6e31"],
+
+Cell[BoxData[
+ TemplateBox[<|"shortenedBoxes" -> TagBox[
+     RowBox[{"{", 
+       RowBox[{
+         RowBox[{"{", 
+           
+           RowBox[{"\"\"", ",", "\"experience_level\"", ",", 
+             "\"employment_type\"", ",", "\"job_title\"", ",", "\"salary\"", 
+             ",", "\"salary_currency\"", ",", "\"salary_in_usd\"", ",", 
+             "\"employee_residence\"", ",", "\"company_location\"", ",", 
+             "\"company_size\""}], "}"}], ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"0", ",", "\"MI\"", ",", "\"FT\"", ",", 
+             "\"Data Specialist\"", ",", "90000", ",", "\"USD\"", ",", 
+             "90000", ",", "\"US\"", ",", "\"US\"", ",", "\"M\""}], "}"}], 
+         ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"1", ",", "\"MI\"", ",", "\"FT\"", ",", 
+             "\"Data Specialist\"", ",", "80000", ",", "\"USD\"", ",", 
+             "80000", ",", "\"US\"", ",", "\"US\"", ",", "\"M\""}], "}"}], 
+         ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"2", ",", "\"MI\"", ",", "\"FT\"", ",", 
+             "\"Data Scientist\"", ",", "212000", ",", "\"USD\"", ",", 
+             "212000", ",", "\"US\"", ",", "\"US\"", ",", "\"M\""}], "}"}], 
+         ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"3", ",", "\"MI\"", ",", "\"FT\"", ",", 
+             "\"Data Scientist\"", ",", "93300", ",", "\"USD\"", ",", "93300",
+              ",", "\"US\"", ",", "\"US\"", ",", "\"M\""}], "}"}], ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"4", ",", "\"MI\"", ",", "\"FT\"", ",", 
+             "\"Data Engineer\"", ",", "133000", ",", "\"USD\"", ",", 
+             "133000", ",", "\"US\"", ",", "\"US\"", ",", "\"M\""}], "}"}], 
+         ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"5", ",", "\"MI\"", ",", "\"FT\"", ",", 
+             "\"Data Engineer\"", ",", "58300", ",", "\"USD\"", ",", "58300", 
+             ",", "\"US\"", ",", "\"US\"", ",", "\"M\""}], "}"}], ",", 
+         TemplateBox[{"1530"}, "OutputSizeLimit`Skeleton"], ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"1536", ",", "\"MI\"", ",", "\"FT\"", ",", 
+             "\"Data Scientist\"", ",", "138350", ",", "\"USD\"", ",", 
+             "138350", ",", "\"US\"", ",", "\"US\"", ",", "\"M\""}], "}"}], 
+         ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"1537", ",", "\"MI\"", ",", "\"FT\"", ",", 
+             "\"Data Engineer\"", ",", "130800", ",", "\"USD\"", ",", 
+             "130800", ",", "\"ES\"", ",", "\"US\"", ",", "\"M\""}], "}"}], 
+         ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"1538", ",", "\"MI\"", ",", "\"FT\"", ",", 
+             "\"Applied Machine Learning Scientist\"", ",", "423000", ",", 
+             "\"USD\"", ",", "423000", ",", "\"US\"", ",", "\"US\"", ",", 
+             "\"L\""}], "}"}], ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"1539", ",", "\"MI\"", ",", "\"FT\"", ",", 
+             "\"Principal Data Scientist\"", ",", "151000", ",", "\"USD\"", 
+             ",", "151000", ",", "\"US\"", ",", "\"US\"", ",", "\"L\""}], 
+           "}"}], ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"1540", ",", "\"EN\"", ",", "\"FT\"", ",", 
+             "\"Data Scientist\"", ",", "105000", ",", "\"USD\"", ",", 
+             "105000", ",", "\"US\"", ",", "\"US\"", ",", "\"S\""}], "}"}], 
+         ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"1541", ",", "\"EN\"", ",", "\"CT\"", ",", 
+             "\"Business Data Analyst\"", ",", "100000", ",", "\"USD\"", ",", 
+             "100000", ",", "\"US\"", ",", "\"US\"", ",", "\"L\""}], "}"}]}], 
+       "}"}], Short[#, 8]& ], "line" -> 2, "sessionID" -> 
+   16407854775738863121, "byteCount" -> 634856, "size" -> 8, "stored" -> 
+   False, "expr" -> Missing["NotStored"], "wrap" -> OutputSizeLimit`Defer, 
+   "version" -> 1|>,
+  "OutputSizeLimitTemplate"]], "Output",
+ CellChangeTimes->{3.90995972192933*^9, 3.9099604387575912`*^9, 
+  3.90997225682522*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"577e8d07-47fd-41fb-9a23-cdc29827eb8d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"JobPosting", "=", 
+  RowBox[{
+  "Import", "[", "\"\</Users/aliak/Desktop/final_job_postings.csv\>\"", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.909959726159375*^9, 3.909959739894492*^9}, {
+  3.909960441487934*^9, 3.909960449746335*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"d936297e-3c45-4f58-9da4-c68574c76914"],
+
+Cell[BoxData[
+ TemplateBox[<|"shortenedBoxes" -> TagBox[
+     RowBox[{"{", 
+       RowBox[{
+         RowBox[{"{", 
+           
+           RowBox[{"\"\"", ",", "\"job_id\"", ",", "\"company_id\"", ",", 
+             "\"title\"", ",", "\"description\"", ",", "\"max_salary\"", ",", 
+             "\"med_salary\"", ",", "\"min_salary\"", ",", "\"pay_period\"", 
+             ",", "\"formatted_work_type\"", ",", "\"location\"", ",", 
+             "\"applies\"", ",", "\"original_listed_time\"", ",", 
+             "\"remote_allowed\"", ",", "\"views\"", ",", 
+             "\"job_posting_url\"", ",", "\"application_url\"", ",", 
+             "\"application_type\"", ",", "\"expiry\"", ",", 
+             "\"closed_time\"", ",", "\"formatted_experience_level\"", ",", 
+             "\"skills_desc\"", ",", "\"listed_time\"", ",", 
+             "\"posting_domain\"", ",", "\"sponsored\"", ",", "\"work_type\"",
+              ",", "\"currency\"", ",", "\"compensation_type\"", ",", 
+             "\"scraped\""}], "}"}], ",", 
+         TemplateBox[{"33245"}, "OutputSizeLimit`Skeleton"], ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"33245", ",", "3958427", ",", "630152.`", ",", 
+             "\"Stylist/ Clorist\"", ",", 
+             "\"Karen Marie is looking for an awesome experienced stylist! \
+Are you looking for a relaxed yet proffesional environment to bring current \
+clients and build your book? We are looking for a full to part-time stylist \
+who has been established in Chicago for at least two years and is liscensed \
+with the state of Illinois. A stylist with a background in color, extensions, \
+make up artist and cutting would be great but we are open to specialits as \
+well!\"", ",", "80000.`", ",", "\"\"", ",", "35000.`", ",", 
+             TemplateBox[{"14"}, "OutputSizeLimit`Skeleton"], ",", 
+             "1.69905`*^12", ",", "\"\"", ",", "0", ",", "\"FULL_TIME\"", ",",
+              "\"USD\"", ",", "\"BASE_SALARY\"", ",", "1699057868"}], "}"}]}],
+        "}"}], Short[#, 8]& ], "line" -> 3, "sessionID" -> 
+   16407854775738863121, "byteCount" -> 168418056, "size" -> 8, "stored" -> 
+   False, "expr" -> Missing["NotStored"], "wrap" -> OutputSizeLimit`Defer, 
+   "version" -> 1|>,
+  "OutputSizeLimitTemplate"]], "Output",
+ CellChangeTimes->{3.909959748114205*^9, 3.909960455895097*^9, 
+  3.9099722636928263`*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"cdd4e3c8-da3d-44e0-86e1-b7f2c5032b18"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "Visualization", " ", "of", " ", "the", " ", "count", " ", "of", " ", 
+    "jobs", " ", "as", " ", "per", " ", "the", " ", "experience", " ", 
+    "level"}], "*)"}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.909977723214005*^9, 
+  3.909977762449473*^9}},ExpressionUUID->"c24bfe80-6795-4541-9e14-\
+ec014a3385cc"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"experienceLevels", "=", " ", 
+   RowBox[{"Salary", "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", "2"}], "]"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.90996336355241*^9, 3.9099633635592117`*^9}, {
+  3.90997221209947*^9, 3.909972246596324*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"8a134453-790a-4037-ad17-751fb66598e0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"enCount", "=", " ", 
+   RowBox[{"Count", "[", 
+    RowBox[{"experienceLevels", ",", " ", "\"\<EN\>\""}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.909972277511875*^9, 3.9099723043168488`*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"3e310a3b-7e99-4050-b1c5-212eb04ccb57"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"miCount", "=", " ", 
+   RowBox[{"Count", "[", 
+    RowBox[{"experienceLevels", ",", " ", "\"\<MI\>\""}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.909972314012554*^9, 3.909972319640658*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"1ed70f71-22b6-47f9-bcd0-583d3fcba7b9"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"counts", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"enCount", ",", " ", "miCount"}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.909972327496998*^9, 3.9099723482759943`*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"3be1174c-19dc-4d7d-8f41-e91971c3f13b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"BarChart", "[", 
+  RowBox[{"counts", ",", " ", 
+   RowBox[{"ChartLabels", "->", 
+    RowBox[{"{", 
+     RowBox[{"\"\<EN\>\"", ",", " ", "\"\<MI\>\""}], "}"}]}], ",", " ", 
+   RowBox[{"ChartStyle", "->", "\"\<Pastel\>\""}], ",", " ", 
+   RowBox[{"AxesLabel", "->", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Experience Level\>\"", ",", " ", "\"\<Number of Jobs\>\""}],
+      "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.9099723629766693`*^9, 3.909972461265005*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"c71d83ef-eb02-4201-93a1-313be684baa5"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {Opacity[0], 
+    PointBox[{{-0.8428550619082302, 0.}, {3.8048069919883467`, 0.}}]}, {{}, 
+    {RGBColor[0.982864, 0.7431472, 0.3262672], EdgeForm[{Opacity[
+     0.6859999999999999], Thickness[Small]}], 
+     {RGBColor[0.761959, 0.470832, 0.940597], EdgeForm[{Opacity[
+      0.6859999999999999], Thickness[Small]}], 
+      TagBox[
+       TooltipBox[
+        TagBox[
+         RectangleBox[{0.5487982520029133, 0.}, {1.4512017479970867, 308.},
+          RoundingRadius->0],
+         StatusArea[#, 308]& ,
+         TagBoxNote->"308"],
+        StyleBox["308", {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[308, {}], "Tooltip"]& ]}, 
+     {RGBColor[0.431296, 0.709773, 0.927077], EdgeForm[{Opacity[
+      0.6859999999999999], Thickness[Small]}], 
+      TagBox[
+       TooltipBox[
+        TagBox[
+         RectangleBox[{1.5487982520029133, 0.}, {2.4512017479970867, 1234.},
+          RoundingRadius->0],
+         StatusArea[#, 1234]& ,
+         TagBoxNote->"1234"],
+        StyleBox["1234", {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[1234, {}], "Tooltip"]& ]}}, {}, {}}, {}, {}, {}, {}, 
+   StyleBox[
+    StyleBox[{
+      {Thickness[Tiny], 
+       LineBox[{{-0.8428550619082302, 0.}, {3.870688128186453, 0.}}], 
+       StyleBox[
+        {Thickness[Tiny], InsetBox[
+          TagBox["\<\"Experience Level\"\>",
+           HoldForm], Offset[{10., 0.}, {2.4512017479970867, 0.}], NCache[
+          ImageScaled[{0, Rational[1, 2]}], ImageScaled[{0, 0.5}]], 
+          Automatic, {1, 0}]}, "GraphicsLabel",
+        StripOnInput->False]}, 
+      StyleBox[{
+        {Thickness[Tiny], 
+         LineBox[{{0.5487982520029133, 0.}, 
+           Offset[{-1.102182119232618*^-15, -6.}, {0.5487982520029133, 0.}]}],
+          LineBox[{{2.4512017479970867`, 0.}, 
+           Offset[{-1.102182119232618*^-15, -6.}, {2.4512017479970867`, 
+            0.}]}], {{}, {}, {
+           LineBox[{{1.4512017479970867`, 0.}, 
+             Offset[{-7.347880794884119*^-16, -4.}, {1.4512017479970867`, 
+              0.}]}], LineBox[{{1.5487982520029133`, 0.}, 
+             Offset[{-7.347880794884119*^-16, -4.}, {1.5487982520029133`, 
+              0.}]}]}, {}}}, 
+        StyleBox[
+         {Thickness[Tiny], 
+          InsetBox["\<\"EN\"\>", Offset[{0, -2}, {1., 0.}], NCache[
+           ImageScaled[{Rational[1, 2], 1}], ImageScaled[{0.5, 1}]], 
+           Automatic, {1, 0}], 
+          InsetBox["\<\"MI\"\>", Offset[{0, -2}, {2., 0.}], NCache[
+           ImageScaled[{Rational[1, 2], 1}], ImageScaled[{0.5, 1}]], 
+           Automatic, {1, 0}]}, "GraphicsLabel",
+         StripOnInput->False]}, "GraphicsTicks",
+       StripOnInput->False]},
+     Antialiasing->False], "GraphicsAxes",
+    StripOnInput->False]},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, True},
+  AxesLabel->{
+    FormBox[
+     TagBox["\"Experience Level\"", HoldForm], TraditionalForm], 
+    FormBox[
+     TagBox["\"Number of Jobs\"", HoldForm], TraditionalForm]},
+  AxesOrigin->{-0.8428550619082302, 0.},
+  CoordinatesToolOptions:>{"DisplayFunction" -> ({
+      Identity[
+       Part[#, 1]], 
+      Identity[
+       Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+      Identity[
+       Part[#, 1]], 
+      Identity[
+       Part[#, 2]]}& )},
+  DisplayFunction->Identity,
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  PlotRange->{{All, All}, {All, All}},
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{None, Automatic}]], "Output",
+ CellChangeTimes->{3.909972462634647*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"d9867108-5fd3-4f50-9f59-c92b1e2b7d22"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{
+   "Finding", " ", "out", " ", "the", " ", "number", " ", "of", " ", 
+    "employees", " ", "residing", " ", "in", " ", "US", " ", "and", " ", 
+    "comparing", " ", "it", " ", "with", " ", "employees", " ", "not", " ", 
+    "residing", " ", "in", " ", "US", " ", "for", " ", "comparison"}], "-", 
+   " ", 
+   RowBox[{"remote", " ", "aspect"}]}], "*)"}]], "Input",
+ CellChangeTimes->{
+  3.909977658283598*^9, {3.909977770848269*^9, 3.909977813078998*^9}, {
+   3.909977947971221*^9, 
+   3.909977978008597*^9}},ExpressionUUID->"c5430add-0052-41b8-a8f1-\
+770d01be0bcb"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.9099772346827593`*^9, 3.909977244231283*^9}, 
+   3.909977655691679*^9},ExpressionUUID->"14947e3e-f03f-419e-9208-\
+27ea4a71e658"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"employeeResidenceCol", "=", "8"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"numberOfEmployeesInUS", "=", 
+   RowBox[{"Length", "[", 
+    RowBox[{"Select", "[", 
+     RowBox[{"Salary", ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"#", "[", 
+         RowBox[{"[", "employeeResidenceCol", "]"}], "]"}], "===", 
+        "\"\<US\>\""}], "&"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", "numberOfEmployeesInUS"}], "Input",
+ CellChangeTimes->{{3.909977642460923*^9, 3.9099776492309*^9}, {
+  3.909977983335115*^9, 
+  3.9099779904718246`*^9}},ExpressionUUID->"c49d9979-a43f-407f-a39e-\
+a214ff46782a"],
+
+Cell[BoxData["1511"], "Output",
+ CellChangeTimes->{3.90997765019142*^9},
+ CellLabel->"Out[52]=",ExpressionUUID->"13ed31bd-f536-4e49-8f41-ca0fb72a46a1"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"numberOfEmployeesOther", "=", 
+   RowBox[{
+    RowBox[{"Length", "[", "Salary", "]"}], "-", "numberOfEmployeesInUS"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.9099778960621347`*^9, 3.9099779029172087`*^9}, {
+  3.9099779928205223`*^9, 
+  3.909977993352119*^9}},ExpressionUUID->"2a24395b-84a8-4b7f-8828-\
+37cbc722376d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["32"], "Input",
+ NumberMarks->False,
+ CellLabel->"In[54]:=",ExpressionUUID->"1c61dcff-1c0f-4d37-b099-6de81f3b4f4d"],
+
+Cell[BoxData["32"], "Output",
+ CellChangeTimes->{3.9099779074172897`*^9},
+ CellLabel->"Out[54]=",ExpressionUUID->"2ef9e5e7-5b90-4cd9-9e29-45177747dd38"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"residencyCounts", "=", 
+   RowBox[{"<|", 
+    RowBox[{
+     RowBox[{"\"\<US\>\"", "->", "numberOfEmployeesInUS"}], ",", 
+     RowBox[{"\"\<Other\>\"", "->", "numberOfEmployeesOther"}]}], "|>"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.90997791583399*^9, 3.909977918913673*^9}, {
+  3.909977997759079*^9, 
+  3.909978004707387*^9}},ExpressionUUID->"bbe4eed4-0442-4c22-a5a6-\
+bd5be733928a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"BarChart", "[", 
+  RowBox[{
+   RowBox[{"Values", "[", "residencyCounts", "]"}], ",", 
+   RowBox[{"ChartLabels", "->", 
+    RowBox[{"Keys", "[", "residencyCounts", "]"}]}], ",", 
+   RowBox[{"PlotLabel", "->", "\"\<Number of Employees by Residence\>\""}], 
+   ",", 
+   RowBox[{"AxesLabel", "->", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Residence\>\"", ",", "\"\<Number of Employees\>\""}], 
+     "}"}]}], ",", 
+   RowBox[{"ChartStyle", "->", "\"\<Pastel\>\""}]}], "]"}]], "Input",
+ CellChangeTimes->{3.909977926335022*^9, 
+  3.909978000360055*^9},ExpressionUUID->"7f287347-312d-4bdd-9efb-\
+af0a64fa8acc"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {Opacity[0], 
+    PointBox[{{-0.8428550619082302, 0.}, {3.8048069919883467`, 0.}}]}, {{}, 
+    {RGBColor[0.982864, 0.7431472, 0.3262672], EdgeForm[{Opacity[
+     0.6859999999999999], Thickness[Small]}], 
+     {RGBColor[0.761959, 0.470832, 0.940597], EdgeForm[{Opacity[
+      0.6859999999999999], Thickness[Small]}], 
+      TagBox[
+       TooltipBox[
+        TagBox[
+         RectangleBox[{0.5487982520029133, 0.}, {1.4512017479970867, 1511.},
+          RoundingRadius->0],
+         StatusArea[#, 1511]& ,
+         TagBoxNote->"1511"],
+        StyleBox["1511", {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[1511, {}], "Tooltip"]& ]}, 
+     {RGBColor[0.431296, 0.709773, 0.927077], EdgeForm[{Opacity[
+      0.6859999999999999], Thickness[Small]}], 
+      TagBox[
+       TooltipBox[
+        TagBox[
+         RectangleBox[{1.5487982520029133, 0.}, {2.4512017479970867, 32.},
+          RoundingRadius->0],
+         StatusArea[#, 32]& ,
+         TagBoxNote->"32"],
+        StyleBox["32", {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[32, {}], "Tooltip"]& ]}}, {}, {}}, {}, {}, {}, {}, 
+   StyleBox[
+    StyleBox[{
+      {Thickness[Tiny], 
+       LineBox[{{-0.8428550619082302, 0.}, {3.870688128186453, 0.}}], 
+       StyleBox[
+        {Thickness[Tiny], InsetBox[
+          TagBox["\<\"Residence\"\>",
+           HoldForm], Offset[{10., 0.}, {2.4512017479970867, 0.}], NCache[
+          ImageScaled[{0, Rational[1, 2]}], ImageScaled[{0, 0.5}]], 
+          Automatic, {1, 0}]}, "GraphicsLabel",
+        StripOnInput->False]}, 
+      StyleBox[{
+        {Thickness[Tiny], 
+         LineBox[{{0.5487982520029133, 0.}, 
+           Offset[{-1.102182119232618*^-15, -6.}, {0.5487982520029133, 0.}]}],
+          LineBox[{{2.4512017479970867`, 0.}, 
+           Offset[{-1.102182119232618*^-15, -6.}, {2.4512017479970867`, 
+            0.}]}], {{}, {}, {
+           LineBox[{{1.4512017479970867`, 0.}, 
+             Offset[{-7.347880794884119*^-16, -4.}, {1.4512017479970867`, 
+              0.}]}], LineBox[{{1.5487982520029133`, 0.}, 
+             Offset[{-7.347880794884119*^-16, -4.}, {1.5487982520029133`, 
+              0.}]}]}, {}}}, 
+        StyleBox[
+         {Thickness[Tiny], 
+          InsetBox["\<\"US\"\>", Offset[{0, -2}, {1., 0.}], NCache[
+           ImageScaled[{Rational[1, 2], 1}], ImageScaled[{0.5, 1}]], 
+           Automatic, {1, 0}], 
+          InsetBox["\<\"Other\"\>", Offset[{0, -2}, {2., 0.}], NCache[
+           ImageScaled[{Rational[1, 2], 1}], ImageScaled[{0.5, 1}]], 
+           Automatic, {1, 0}]}, "GraphicsLabel",
+         StripOnInput->False]}, "GraphicsTicks",
+       StripOnInput->False]},
+     Antialiasing->False], "GraphicsAxes",
+    StripOnInput->False]},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, True},
+  AxesLabel->{
+    FormBox[
+     TagBox["\"Residence\"", HoldForm], TraditionalForm], 
+    FormBox[
+     TagBox["\"Number of Employees\"", HoldForm], TraditionalForm]},
+  AxesOrigin->{-0.8428550619082302, 0.},
+  CoordinatesToolOptions:>{"DisplayFunction" -> ({
+      Identity[
+       Part[#, 1]], 
+      Identity[
+       Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+      Identity[
+       Part[#, 1]], 
+      Identity[
+       Part[#, 2]]}& )},
+  DisplayFunction->Identity,
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  PlotLabel->FormBox["\"Number of Employees by Residence\"", TraditionalForm],
+  
+  PlotRange->{{All, All}, {All, All}},
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{None, Automatic}]], "Output",
+ CellChangeTimes->{3.909977928623291*^9},
+ CellLabel->"Out[56]=",ExpressionUUID->"299a6a35-2ce4-4858-ae0c-1012633d933c"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+  "Visualizing", " ", "the", " ", "Jobs", " ", "in", " ", "terms", " ", "of", 
+   " ", "the", " ", "type", " ", "of", " ", "contract"}], "*)"}]], "Input",
+ CellChangeTimes->{{3.909979234988871*^9, 
+  3.909979263899168*^9}},ExpressionUUID->"ca819aa1-bb8f-4901-8dc7-\
+5388fec68edc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"formattedWorkTypeCol", "=", "10"}], ";"}], 
+  " "}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"workTypeTally", "=", 
+    RowBox[{"Tally", "[", 
+     RowBox[{"JobPosting", "[", 
+      RowBox[{"[", 
+       RowBox[{"All", ",", "formattedWorkTypeCol"}], "]"}], "]"}], "]"}]}], 
+   ";"}], "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"sortedWorkTypeTally", "=", 
+    RowBox[{"SortBy", "[", 
+     RowBox[{"workTypeTally", ",", "Last"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{"BarChart", "[", 
+  RowBox[{
+   RowBox[{"Last", "/@", "sortedWorkTypeTally"}], ",", 
+   RowBox[{"ChartLabels", "->", 
+    RowBox[{"Placed", "[", 
+     RowBox[{
+      RowBox[{"First", "/@", "sortedWorkTypeTally"}], ",", "Below", ",", 
+      RowBox[{
+       RowBox[{"Rotate", "[", 
+        RowBox[{"#", ",", 
+         RowBox[{"Pi", "/", "2"}]}], "]"}], "&"}]}], "]"}]}], ",", 
+   RowBox[{"PlotLabel", "->", "\"\<Count of Work Types\>\""}], ",", 
+   RowBox[{"AxesLabel", "->", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Work Type\>\"", ",", "\"\<Count\>\""}], "}"}]}], ",", 
+   RowBox[{"ChartStyle", "->", "\"\<Pastel\>\""}], ",", 
+   RowBox[{"ImageSize", "->", "Large"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.909979167167693*^9, 3.909979193084138*^9}},
+ CellLabel->"In[80]:=",ExpressionUUID->"d015f28f-f7eb-4203-9005-081e8fc9b5aa"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {Opacity[0], 
+    PointBox[{{0.39075018208302986`, 0.}, {8.451201747997086, 0.}}]}, {{}, 
+    {RGBColor[0.982864, 0.7431472, 0.3262672], EdgeForm[{Opacity[0.644], 
+     Thickness[Small]}], 
+     {RGBColor[0.761959, 0.470832, 0.940597], EdgeForm[{Opacity[0.644], 
+      Thickness[Small]}], 
+      TagBox[
+       TooltipBox[
+        TagBox[
+         RectangleBox[{0.5487982520029133, 0.}, {1.4512017479970867, 1.},
+          RoundingRadius->0],
+         StatusArea[#, 1]& ,
+         TagBoxNote->"1"],
+        StyleBox["1", {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[1, {}], "Tooltip"]& ]}, 
+     {RGBColor[0.842163, 0.62107, 0.8495695714285715], EdgeForm[{Opacity[
+      0.644], Thickness[Small]}], 
+      TagBox[
+       TooltipBox[
+        TagBox[
+         RectangleBox[{1.5487982520029133, 0.}, {2.4512017479970867, 45.},
+          RoundingRadius->0],
+         StatusArea[#, 45]& ,
+         TagBoxNote->"45"],
+        StyleBox["45", {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[45, {}], "Tooltip"]& ]}, 
+     {RGBColor[0.9133704285714286, 0.7086834285714285, 0.6405378571428572], 
+      EdgeForm[{Opacity[0.644], Thickness[Small]}], 
+      TagBox[
+       TooltipBox[
+        TagBox[
+         RectangleBox[{2.5487982520029133, 0.}, {3.4512017479970867, 110.},
+          RoundingRadius->0],
+         StatusArea[#, 110]& ,
+         TagBoxNote->"110"],
+        StyleBox["110", {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[110, {}], "Tooltip"]& ]}, 
+     {RGBColor[0.9496274285714286, 0.8200274285714285, 0.5905707142857143], 
+      EdgeForm[{Opacity[0.644], Thickness[Small]}], 
+      TagBox[
+       TooltipBox[
+        TagBox[
+         RectangleBox[{3.5487982520029133, 0.}, {4.451201747997087, 228.},
+          RoundingRadius->0],
+         StatusArea[#, 228]& ,
+         TagBoxNote->"228"],
+        StyleBox["228", {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[228, {}], "Tooltip"]& ]}, 
+     {RGBColor[0.9581918571428572, 0.9248882857142857, 0.6055372857142857], 
+      EdgeForm[{Opacity[0.644], Thickness[Small]}], 
+      TagBox[
+       TooltipBox[
+        TagBox[
+         RectangleBox[{4.548798252002913, 0.}, {5.451201747997087, 260.},
+          RoundingRadius->0],
+         StatusArea[#, 260]& ,
+         TagBoxNote->"260"],
+        StyleBox["260", {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[260, {}], "Tooltip"]& ]}, 
+     {RGBColor[0.8992781428571429, 0.9456901428571428, 0.7131011428571428], 
+      EdgeForm[{Opacity[0.644], Thickness[Small]}], 
+      TagBox[
+       TooltipBox[
+        TagBox[
+         RectangleBox[{5.548798252002913, 0.}, {6.451201747997087, 2244.},
+          RoundingRadius->0],
+         StatusArea[#, 2244]& ,
+         TagBoxNote->"2244"],
+        StyleBox["2244", {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[2244, {}], "Tooltip"]& ]}, 
+     {RGBColor[0.695512, 0.8505658571428572, 0.898783], EdgeForm[{Opacity[
+      0.644], Thickness[Small]}], 
+      TagBox[
+       TooltipBox[
+        TagBox[
+         RectangleBox[{6.548798252002913, 0.}, {7.451201747997087, 3459.},
+          RoundingRadius->0],
+         StatusArea[#, 3459]& ,
+         TagBoxNote->"3459"],
+        StyleBox["3459", {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[3459, {}], "Tooltip"]& ]}, 
+     {RGBColor[0.431296, 0.709773, 0.927077], EdgeForm[{Opacity[0.644], 
+      Thickness[Small]}], 
+      TagBox[
+       TooltipBox[
+        TagBox[
+         RectangleBox[{7.548798252002913, 0.}, {8.451201747997086, 26900.},
+          RoundingRadius->0],
+         StatusArea[#, 26900]& ,
+         TagBoxNote->"26900"],
+        StyleBox["26900", {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[26900, {}], "Tooltip"]& ]}}, {}, {}}, {}, {InsetBox[
+     RotationBox["\<\"formatted_work_type\"\>",
+      BoxRotation->1.5707963267948966`], Offset[{0, -4}, {1., 0.}], 
+     ImageScaled[{0.5, 1}]], InsetBox[
+     RotationBox["\<\"Volunteer\"\>",
+      BoxRotation->1.5707963267948966`], Offset[{0, -4}, {2., 0.}], 
+     ImageScaled[{0.5, 1}]], InsetBox[
+     RotationBox["\<\"Other\"\>",
+      BoxRotation->1.5707963267948966`], Offset[{0, -4}, {3., 0.}], 
+     ImageScaled[{0.5, 1}]], InsetBox[
+     RotationBox["\<\"Internship\"\>",
+      BoxRotation->1.5707963267948966`], Offset[{0, -4}, {4., 0.}], 
+     ImageScaled[{0.5, 1}]], InsetBox[
+     RotationBox["\<\"Temporary\"\>",
+      BoxRotation->1.5707963267948966`], Offset[{0, -4}, {5., 0.}], 
+     ImageScaled[{0.5, 1}]], InsetBox[
+     RotationBox["\<\"Part-time\"\>",
+      BoxRotation->1.5707963267948966`], Offset[{0, -4}, {6., 0.}], 
+     ImageScaled[{0.5, 1}]], InsetBox[
+     RotationBox["\<\"Contract\"\>",
+      BoxRotation->1.5707963267948966`], Offset[{0, -4}, {7., 0.}], 
+     ImageScaled[{0.5, 1}]], InsetBox[
+     RotationBox["\<\"Full-time\"\>",
+      BoxRotation->1.5707963267948966`], Offset[{0, -4}, {8., 0.}], 
+     ImageScaled[{0.5, 1}]]}, {}, {}, 
+   StyleBox[
+    StyleBox[{
+      {Thickness[Tiny], 
+       LineBox[{{0.39075018208302986`, 0.}, {8.612410779315367, 0.}}], 
+       StyleBox[
+        {Thickness[Tiny], InsetBox[
+          TagBox["\<\"Work Type\"\>",
+           HoldForm], Offset[{10., 0.}, {8.451201747997084, 0.}], NCache[
+          ImageScaled[{0, Rational[1, 2]}], ImageScaled[{0, 0.5}]], 
+          Automatic, {1, 0}]}, "GraphicsLabel",
+        StripOnInput->False]}, 
+      StyleBox[{
+        {Thickness[Tiny], 
+         LineBox[{{0.5487982520029133, 0.}, 
+           Offset[{-1.102182119232618*^-15, -6.}, {0.5487982520029133, 0.}]}],
+          LineBox[{{8.451201747997086, 0.}, 
+           Offset[{-1.102182119232618*^-15, -6.}, {8.451201747997086, 
+            0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}, 
+        StyleBox[{}, "GraphicsLabel",
+         StripOnInput->False]}, "GraphicsTicks",
+       StripOnInput->False]},
+     Antialiasing->False], "GraphicsAxes",
+    StripOnInput->False]},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, True},
+  AxesLabel->{
+    FormBox[
+     TagBox["\"Work Type\"", HoldForm], TraditionalForm], 
+    FormBox[
+     TagBox["\"Count\"", HoldForm], TraditionalForm]},
+  AxesOrigin->{0.39075018208302986`, 0.},
+  CoordinatesToolOptions:>{"DisplayFunction" -> ({
+      Identity[
+       Part[#, 1]], 
+      Identity[
+       Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+      Identity[
+       Part[#, 1]], 
+      Identity[
+       Part[#, 2]]}& )},
+  DisplayFunction->Identity,
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->Large,
+  PlotLabel->FormBox["\"Count of Work Types\"", TraditionalForm],
+  PlotRange->{{All, All}, {All, All}},
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{None, Automatic}]], "Output",
+ CellChangeTimes->{{3.909979168494514*^9, 3.909979197546927*^9}},
+ CellLabel->"Out[83]=",ExpressionUUID->"a4eeffae-3481-44b7-9a4a-9c485cbab34e"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.9099791339900618`*^9, 
+  3.909979133992731*^9}},ExpressionUUID->"b9f1a0bd-13c9-4c06-892f-\
+c4a14da1d45a"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.909976489115053*^9, 
+  3.909976513086186*^9}},ExpressionUUID->"25e5899f-8344-4b28-afe5-\
+93d56a72239f"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.909978587129668*^9, 3.909978622982183*^9}, 
+   3.9099787226426697`*^9},ExpressionUUID->"c195575e-3a64-41ce-89e2-\
+a25ac97889ef"],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{{3.909978620761071*^9, 3.909978646107214*^9}, 
+   3.909978724902542*^9},ExpressionUUID->"db1adbe4-23d3-4894-9c67-\
+49b2dad1fe4e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.909975694243396*^9, 3.909975694402584*^9}},
+ NumberMarks->False,ExpressionUUID->"cf4748ed-fea9-4337-9af2-cbad0f2e356a"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.909975682921892*^9},
+ CellLabel->"Out[29]=",ExpressionUUID->"6d31c3f9-f8f4-41a9-8b17-71208f497a35"]
+}, Closed]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.9099786415832653`*^9, 3.9099786833927937`*^9}, 
+   3.9099787186366663`*^9},ExpressionUUID->"b35eb3f3-103b-406c-b84d-\
+09b2615958d9"],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{3.909978677018753*^9, 
+  3.909978716266595*^9},ExpressionUUID->"97e6b87f-4025-4bdd-88f7-\
+40b287155eff"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.909962660770609*^9, 3.909962667121365*^9}, 
+   3.9099629457843323`*^9},ExpressionUUID->"3e3fe4fa-78cb-4060-9462-\
+6ce6a85aaef1"],
+
+Cell[BoxData["\n"], "Input",
+ CellChangeTimes->{{3.909962680570539*^9, 3.909962680573615*^9}, 
+   3.909962943125607*^9},ExpressionUUID->"4fe46a5e-f9bb-48cb-8bab-\
+c0e374e67d45"],
+
+Cell[BoxData["\n"], "Input",
+ CellChangeTimes->{{3.909962850241064*^9, 3.909962850244031*^9}, 
+   3.909962940617962*^9},ExpressionUUID->"03a84749-2e5d-4cd7-bb0b-\
+7bc8499f7262"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.909962861662613*^9, 3.909962861665851*^9}, 
+   3.909962938313476*^9},ExpressionUUID->"d1b41b18-535f-47c6-8bf9-\
+93c95ea6179b"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.909962448878746*^9, 3.909962448881034*^9}, {
+   3.90996248045503*^9, 3.9099624849742517`*^9}, 
+   3.909962518659842*^9},ExpressionUUID->"1b43c1eb-7b94-41e0-a93a-\
+5bc6bd758269"],
+
+Cell[BoxData["\n"], "Input",
+ CellChangeTimes->{{3.909962468516214*^9, 3.909962468519394*^9}, 
+   3.909962506565206*^9},ExpressionUUID->"5bf190e2-c15a-4094-9f9f-\
+38456e61d803"]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"13.3 for Mac OS X ARM (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"7bfa9a16-387a-41d0-a058-6686103dbcb5"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 335, 7, 30, "Input",ExpressionUUID->"c8c2222f-c0be-4f31-95e4-fdc7ec1f6e31"],
+Cell[918, 31, 4092, 88, 147, "Output",ExpressionUUID->"577e8d07-47fd-41fb-9a23-cdc29827eb8d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5047, 124, 341, 7, 30, "Input",ExpressionUUID->"d936297e-3c45-4f58-9da4-c68574c76914"],
+Cell[5391, 133, 2431, 41, 167, "Output",ExpressionUUID->"cdd4e3c8-da3d-44e0-86e1-b7f2c5032b18"]
+}, Open  ]],
+Cell[7837, 177, 382, 9, 52, "Input",ExpressionUUID->"c24bfe80-6795-4541-9e14-ec014a3385cc"],
+Cell[8222, 188, 367, 8, 30, "Input",ExpressionUUID->"8a134453-790a-4037-ad17-751fb66598e0"],
+Cell[8592, 198, 314, 7, 30, "Input",ExpressionUUID->"3e310a3b-7e99-4050-b1c5-212eb04ccb57"],
+Cell[8909, 207, 312, 7, 30, "Input",ExpressionUUID->"1ed70f71-22b6-47f9-bcd0-583d3fcba7b9"],
+Cell[9224, 216, 289, 6, 30, "Input",ExpressionUUID->"3be1174c-19dc-4d7d-8f41-e91971c3f13b"],
+Cell[CellGroupData[{
+Cell[9538, 226, 565, 12, 30, "Input",ExpressionUUID->"c71d83ef-eb02-4201-93a1-313be684baa5"],
+Cell[10106, 240, 3812, 96, 252, "Output",ExpressionUUID->"d9867108-5fd3-4f50-9f59-c92b1e2b7d22"]
+}, Open  ]],
+Cell[13933, 339, 619, 14, 30, "Input",ExpressionUUID->"c5430add-0052-41b8-a8f1-770d01be0bcb"],
+Cell[14555, 355, 177, 3, 30, "Input",ExpressionUUID->"14947e3e-f03f-419e-9208-27ea4a71e658"],
+Cell[CellGroupData[{
+Cell[14757, 362, 655, 17, 73, "Input",ExpressionUUID->"c49d9979-a43f-407f-a39e-a214ff46782a"],
+Cell[15415, 381, 151, 2, 34, "Output",ExpressionUUID->"13ed31bd-f536-4e49-8f41-ca0fb72a46a1"]
+}, Open  ]],
+Cell[15581, 386, 356, 9, 30, "Input",ExpressionUUID->"2a24395b-84a8-4b7f-8828-37cbc722376d"],
+Cell[CellGroupData[{
+Cell[15962, 399, 128, 2, 30, "Input",ExpressionUUID->"1c61dcff-1c0f-4d37-b099-6de81f3b4f4d"],
+Cell[16093, 403, 152, 2, 34, "Output",ExpressionUUID->"2ef9e5e7-5b90-4cd9-9e29-45177747dd38"]
+}, Open  ]],
+Cell[16260, 408, 425, 11, 30, "Input",ExpressionUUID->"bbe4eed4-0442-4c22-a5a6-bd5be733928a"],
+Cell[CellGroupData[{
+Cell[16710, 423, 623, 15, 52, "Input",ExpressionUUID->"7f287347-312d-4bdd-9efb-af0a64fa8acc"],
+Cell[17336, 440, 3884, 98, 257, "Output",ExpressionUUID->"299a6a35-2ce4-4858-ae0c-1012633d933c"]
+}, Open  ]],
+Cell[21235, 541, 321, 7, 30, "Input",ExpressionUUID->"ca819aa1-bb8f-4901-8dc7-5388fec68edc"],
+Cell[CellGroupData[{
+Cell[21581, 552, 1401, 37, 157, "Input",ExpressionUUID->"d015f28f-f7eb-4203-9005-081e8fc9b5aa"],
+Cell[22985, 591, 7126, 182, 461, "Output",ExpressionUUID->"a4eeffae-3481-44b7-9a4a-9c485cbab34e"]
+}, Open  ]],
+Cell[30126, 776, 154, 3, 30, "Input",ExpressionUUID->"b9f1a0bd-13c9-4c06-892f-c4a14da1d45a"],
+Cell[30283, 781, 152, 3, 30, "Input",ExpressionUUID->"25e5899f-8344-4b28-afe5-93d56a72239f"],
+Cell[30438, 786, 177, 3, 30, "Input",ExpressionUUID->"c195575e-3a64-41ce-89e2-a25ac97889ef"],
+Cell[30618, 791, 194, 3, 52, "Input",ExpressionUUID->"db1adbe4-23d3-4894-9c67-49b2dad1fe4e"],
+Cell[CellGroupData[{
+Cell[30837, 798, 168, 2, 30, "Input",ExpressionUUID->"cf4748ed-fea9-4337-9af2-cbad0f2e356a"],
+Cell[31008, 802, 201, 3, 34, "Output",ExpressionUUID->"6d31c3f9-f8f4-41a9-8b17-71208f497a35"]
+}, Closed]],
+Cell[31224, 808, 181, 3, 26, "Input",ExpressionUUID->"b35eb3f3-103b-406c-b84d-09b2615958d9"],
+Cell[31408, 813, 169, 3, 52, "Input",ExpressionUUID->"97e6b87f-4025-4bdd-88f7-40b287155eff"],
+Cell[31580, 818, 177, 3, 30, "Input",ExpressionUUID->"3e3fe4fa-78cb-4060-9462-6ce6a85aaef1"],
+Cell[31760, 823, 177, 3, 52, "Input",ExpressionUUID->"4fe46a5e-f9bb-48cb-8bab-c0e374e67d45"],
+Cell[31940, 828, 177, 3, 52, "Input",ExpressionUUID->"03a84749-2e5d-4cd7-bb0b-7bc8499f7262"],
+Cell[32120, 833, 175, 3, 30, "Input",ExpressionUUID->"d1b41b18-535f-47c6-8bf9-93c95ea6179b"],
+Cell[32298, 838, 226, 4, 30, "Input",ExpressionUUID->"1b43c1eb-7b94-41e0-a93a-5bc6bd758269"],
+Cell[32527, 844, 177, 3, 52, "Input",ExpressionUUID->"5bf190e2-c15a-4094-9f9f-38456e61d803"]
+}
+]
+*)
+
