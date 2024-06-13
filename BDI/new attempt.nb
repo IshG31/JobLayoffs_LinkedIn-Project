@@ -1,0 +1,356 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15697,        348]
+NotebookOptionsPosition[     13578,        302]
+NotebookOutlinePosition[     13979,        318]
+CellTagsIndexPosition[     13936,        315]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", 
+  RowBox[{"NotebookDirectory", "[", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.9101013985536995`*^9, 3.910101422870068*^9}},
+ CellLabel->"In[48]:=",ExpressionUUID->"9a976fd8-3657-45b9-807e-aa4241e1ec19"],
+
+Cell[BoxData["\<\"C:\\\\Users\\\\ISHIKA GUPTA\\\\Desktop\\\\MSBA \
+Subjects\\\\Data Storytelling\\\\BDI\"\>"], "Output",
+ CellChangeTimes->{3.9101014235850115`*^9, 3.9101014778697414`*^9},
+ CellLabel->"Out[48]=",ExpressionUUID->"4813db69-e840-44d5-9060-671c575076c1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"data1", "=", 
+  RowBox[{"Import", "[", "\"\<job_cleaned_new.csv\>\"", "]"}]}]], "Input",
+ CellChangeTimes->{{3.910101456007289*^9, 3.9101014658579464`*^9}, {
+  3.9101014994004207`*^9, 3.9101015030699744`*^9}},
+ CellLabel->"In[50]:=",ExpressionUUID->"970b3934-d4c9-42b2-a277-c78d21b0aa4f"],
+
+Cell[BoxData[
+ TemplateBox[<|"shortenedBoxes" -> TagBox[
+     RowBox[{"{", 
+       RowBox[{
+         RowBox[{"{", 
+           
+           RowBox[{"\"job_id\"", ",", "\"company_id\"", ",", "\"job_title\"", 
+             ",", "\"description\"", ",", "\"work_type\"", ",", 
+             "\"location\"", ",", "\"experience_level\"", ",", 
+             "\"sponsored\""}], "}"}], ",", 
+         TemplateBox[{"450"}, "OutputSizeLimit`Skeleton"], ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"3682818140", ",", "68921004", ",", 
+             "\"Senior Business Intelligence Developer\"", ",", 
+             
+             RowBox[{"\"Carefully read the JD before applying!Job \
+Description: Senior BI Developer (Hybrid)Primary Duties & ResponsibilitiesJOB \
+SUMMARYThe Senior BI Developer is responsible for delivering cross-functional \
+reporting, data exploratory analysis via SQL/AWS Redshift, and hands-on \
+development of highly visible visualization proje\"", "\[Ellipsis]", 
+               "\"ept with agile software development lifecycle and DevOps \
+principles, with special exposure to JIRA, GitLab and Jenkins. Being thorough \
+about non-functional requirements such as scalability, availability, logging, \
+monitoring etc. Familiar with large scale architecture design \\nSend resume \
+to kaykay@ebusinesstechcorp.com\""}], ",", "\"Contract\"", ",", "\"TX\"", ",",
+              "\"Executive\"", ",", "0"}], "}"}]}], "}"}], Short[#, 8]& ], 
+   "line" -> 50, "sessionID" -> 19683638501609208617, "byteCount" -> 1826320, 
+   "size" -> 8, "stored" -> False, "expr" -> Missing["NotStored"], "wrap" -> 
+   OutputSizeLimit`Defer, "version" -> 1|>,
+  "OutputSizeLimitTemplate"]], "Output",
+ CellChangeTimes->{{3.910101466973245*^9, 3.910101504003584*^9}},
+ CellLabel->"Out[50]=",ExpressionUUID->"a2da7dd0-e703-4dff-99d6-372caa9efcaf"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"data1", "[", 
+  RowBox[{"[", "1", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.9101015058208337`*^9, 3.910101509530364*^9}},
+ CellLabel->"In[51]:=",ExpressionUUID->"6461f877-8793-4e33-a02c-fb918ff34a87"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"job_id\"\>", ",", "\<\"company_id\"\>", 
+   ",", "\<\"job_title\"\>", ",", "\<\"description\"\>", 
+   ",", "\<\"work_type\"\>", ",", "\<\"location\"\>", 
+   ",", "\<\"experience_level\"\>", ",", "\<\"sponsored\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.91010150973324*^9},
+ CellLabel->"Out[51]=",ExpressionUUID->"8f179d1d-83a8-456b-b062-8b593d3b6c4a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"data1", "[", 
+  RowBox[{"[", 
+   RowBox[{"1", ",", "6"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.9101015166506205`*^9, 3.9101015487902966`*^9}},
+ CellLabel->"In[55]:=",ExpressionUUID->"6ef7f9df-4b84-4182-84d9-0c9c6d533f89"],
+
+Cell[BoxData["\<\"location\"\>"], "Output",
+ CellChangeTimes->{{3.9101015188267307`*^9, 3.9101015489413376`*^9}},
+ CellLabel->"Out[55]=",ExpressionUUID->"cb954ad5-c82a-422b-9b7d-a57e5fdfc586"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"headers", "=", 
+  RowBox[{"data1", "[", 
+   RowBox[{"[", "1", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.910101569183261*^9, 3.910101575397684*^9}},
+ CellLabel->"In[56]:=",ExpressionUUID->"c88e8cb4-3f0b-4902-9ad2-11674991ee98"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"job_id\"\>", ",", "\<\"company_id\"\>", 
+   ",", "\<\"job_title\"\>", ",", "\<\"description\"\>", 
+   ",", "\<\"work_type\"\>", ",", "\<\"location\"\>", 
+   ",", "\<\"experience_level\"\>", ",", "\<\"sponsored\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.9101015756728373`*^9},
+ CellLabel->"Out[56]=",ExpressionUUID->"b677b990-fd93-489c-a4be-15f73eba7c90"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"list", "=", 
+  RowBox[{"Rest", "[", "data1", "]"}]}]], "Input",
+ CellChangeTimes->{{3.910101579124119*^9, 3.9101015945382147`*^9}},
+ CellLabel->"In[58]:=",ExpressionUUID->"72d6016f-e2a5-4797-9ecf-8fdcd4b293c5"],
+
+Cell[BoxData[
+ TemplateBox[<|"shortenedBoxes" -> TagBox[
+     RowBox[{"{", 
+       RowBox[{
+         RowBox[{"{", 
+           
+           RowBox[{"3757934320", ",", "1997035", ",", 
+             "\"Business Analyst Sr - Hybrid Nasville\"", ",", 
+             TemplateBox[{"3336"}, "OutputSizeLimit`Skeleton"], ",", 
+             "\"Contract\"", ",", "\"TN\"", ",", "\"Mid-Senior level\"", ",", 
+             "0"}], "}"}], ",", 
+         TemplateBox[{"449"}, "OutputSizeLimit`Skeleton"], ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"3682818140", ",", "68921004", ",", 
+             "\"Senior Business Intelligence Developer\"", ",", 
+             
+             RowBox[{"\"Carefully read the JD before applying!Job \
+Description: Senior BI Developer (Hybrid)Primary Duties & ResponsibilitiesJOB \
+SUMMARYThe Senior BI Developer is responsible for delivering cross-functional \
+reporting, data exploratory analysis via SQL/AWS Redshift, and hands-on \
+development of highly visible visualization \"", "\[Ellipsis]", 
+               "\"with agile software development lifecycle and DevOps \
+principles, with special exposure to JIRA, GitLab and Jenkins. Being thorough \
+about non-functional requirements such as scalability, availability, logging, \
+monitoring etc. Familiar with large scale architecture design \\nSend resume \
+to kaykay@ebusinesstechcorp.com\""}], ",", "\"Contract\"", ",", "\"TX\"", ",",
+              "\"Executive\"", ",", "0"}], "}"}]}], "}"}], Short[#, 8]& ], 
+   "line" -> 58, "sessionID" -> 19683638501609208617, "byteCount" -> 1825896, 
+   "size" -> 8, "stored" -> False, "expr" -> Missing["NotStored"], "wrap" -> 
+   OutputSizeLimit`Defer, "version" -> 1|>,
+  "OutputSizeLimitTemplate"]], "Output",
+ CellChangeTimes->{{3.9101015875706477`*^9, 3.910101594805004*^9}},
+ CellLabel->"Out[58]=",ExpressionUUID->"8af4f591-4ca7-411d-9b6e-119c9dd06c30"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"data1", "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.9101016031119623`*^9, 3.910101608163312*^9}},
+ CellLabel->"In[59]:=",ExpressionUUID->"4cc9809e-5519-4238-88c7-c7fa2a4a834b"],
+
+Cell[BoxData["452"], "Output",
+ CellChangeTimes->{3.910101608358797*^9},
+ CellLabel->"Out[59]=",ExpressionUUID->"ff38081b-ecbb-4527-931e-f17297a266b8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"asso", "=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"AssociationThread", "[", 
+     RowBox[{"headers", ",", 
+      RowBox[{"list", "[", 
+       RowBox[{"[", "i", "]"}], "]"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", 
+      RowBox[{"Range", "[", "452", "]"}]}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.910101599522478*^9, 3.9101016291945057`*^9}},
+ CellLabel->"In[60]:=",ExpressionUUID->"5aecdc08-71b4-46c6-b5db-316b25bb8154"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part", "partw", 
+   "\"Part \\!\\(\\*RowBox[{\\\"452\\\"}]\\) of \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{\\\"3757934320\\\", \\\",\\\", \\\"1997035\
+\\\", \\\",\\\", \\\"\\\\\\\"Business Analyst Sr - Hybrid \
+Nasville\\\\\\\"\\\", \\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"3336\\\", \\\"\[RightSkeleton]\\\"}], \\\",\\\", \\\"\\\\\\\"Contract\\\\\
+\\\"\\\", \\\",\\\", \\\"\\\\\\\"TN\\\\\\\"\\\", \\\",\\\", \
+\\\"\\\\\\\"Mid-Senior level\\\\\\\"\\\", \\\",\\\", \\\"0\\\"}], \
+\\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"3757907564\\\", \
+\\\",\\\", \\\"1680\\\", \\\",\\\", \\\"\\\\\\\"Business Analyst\\\\\\\"\\\", \
+\\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"4246\\\", \
+\\\"\[RightSkeleton]\\\"}], \\\",\\\", \\\"\\\\\\\"Full-time\\\\\\\"\\\", \
+\\\",\\\", \\\"\\\\\\\"KY\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\"Mid-Senior \
+level\\\\\\\"\\\", \\\",\\\", \\\"0\\\"}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\
+\"\[LeftSkeleton]\\\", \\\"7\\\", \\\"\[RightSkeleton]\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"3757494342\\\", \\\",\\\", \\\"11056\\\", \
+\\\",\\\", \\\"\\\\\\\"Business Analyst\\\\\\\"\\\", \\\",\\\", \
+RowBox[{\\\"\\\\\\\"MUST HAVES: Bachelor degree in related field5+ years of \
+experience as a Business AnalystExperience writing user stories Agile and \
+wate\\\\\\\"\\\", \\\"\[Ellipsis]\\\", \\\"\\\\\\\"leaders to help collect \
+and analyze business requirements and outcomes to focus product strategy and \
+direction within the organization.\\\\\\\"\\\"}], \\\",\\\", RowBox[{\\\"\\\\\
+\\\"\\\\\\\"\\\", \\\"\[Ellipsis]\\\", \\\"\\\\\\\"\\\\\\\"\\\"}], \\\",\\\", \
+\\\"\\\\\\\"FL\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\"Mid-Senior level\\\\\\\"\\\
+\", \\\",\\\", \\\"0\\\"}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"441\\\", \\\"\[RightSkeleton]\\\"}]}], \
+\\\"}\\\"}]\\) does not exist.\"", 2, 60, 15, 19683638501609208617, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.910101631211073*^9},
+ CellLabel->
+  "During evaluation of \
+In[60]:=",ExpressionUUID->"4a404a03-cd6b-4298-8f11-449bf19f80ac"],
+
+Cell[BoxData[
+ TemplateBox[<|"shortenedBoxes" -> TagBox[
+     RowBox[{"{", 
+       RowBox[{
+         RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+             RowBox[{"\"job_id\"", "\[Rule]", "3757934320"}], ",", 
+             RowBox[{"\"company_id\"", "\[Rule]", "1997035"}], ",", 
+             
+             RowBox[{"\"job_title\"", "\[Rule]", 
+               "\"Business Analyst Sr - Hybrid Nasville\""}], ",", 
+             RowBox[{"\"description\"", "\[Rule]", 
+               TemplateBox[{"3336"}, "OutputSizeLimit`Skeleton"]}], ",", 
+             RowBox[{"\"work_type\"", "\[Rule]", "\"Contract\""}], ",", 
+             RowBox[{"\"location\"", "\[Rule]", "\"TN\""}], ",", 
+             
+             RowBox[{"\"experience_level\"", "\[Rule]", 
+               "\"Mid-Senior level\""}], ",", 
+             RowBox[{"\"sponsored\"", "\[Rule]", "0"}]}], 
+           "\[RightAssociation]"}], ",", 
+         TemplateBox[{"450"}, "OutputSizeLimit`Skeleton"], ",", 
+         RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+             RowBox[{"\"job_id\"", "\[Rule]", 
+               RowBox[{
+                 RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    
+                    RowBox[{
+                    "3757934320", ",", "1997035", ",", 
+                    "\"Business Analyst Sr - Hybrid Nasville\"", ",", 
+                    TemplateBox[{"3336"}, "OutputSizeLimit`Skeleton"], ",", 
+                    "\"Contract\"", ",", "\"TN\"", ",", 
+                    "\"Mid-Senior level\"", ",", "0"}], "}"}], ",", 
+                    TemplateBox[{"449"}, "OutputSizeLimit`Skeleton"], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{
+                    "3682818140", ",", "68921004", ",", 
+                    "\"Senior Business Intelligence Developer\"", ",", 
+                    
+                    RowBox[{
+                    "\"Carefully read the JD before applying!Job Description: \
+Senior BI Developer (Hybrid)Primary Duties & ResponsibilitiesJOB SUMMARYThe \
+Senior BI Developer is responsible for deliveri\"", "\[Ellipsis]", 
+                    "\"non-functional requirements such as scalability, \
+availability, logging, monitoring etc. Familiar with large scale architecture \
+design \\nSend resume to kaykay@ebusinesstechcorp.com\""}], ",", 
+                    "\"Contract\"", ",", "\"TX\"", ",", "\"Executive\"", ",", 
+                    "0"}], "}"}]}], "}"}], "\[LeftDoubleBracket]", "452", 
+                 "\[RightDoubleBracket]"}]}], ",", 
+             TemplateBox[{"6"}, "OutputSizeLimit`Skeleton"], ",", 
+             RowBox[{"\"sponsored\"", "\[Rule]", 
+               TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"]}]}], 
+           "\[RightAssociation]"}]}], "}"}], Short[#, 8]& ], "line" -> 60, 
+   "sessionID" -> 19683638501609208617, "byteCount" -> 16956496, "size" -> 8, 
+   "stored" -> False, "expr" -> Missing["NotStored"], "wrap" -> 
+   OutputSizeLimit`Defer, "version" -> 1|>,
+  "OutputSizeLimitTemplate"]], "Output",
+ CellChangeTimes->{3.9101016316074963`*^9},
+ CellLabel->"Out[60]=",ExpressionUUID->"4ef70a71-59e3-4311-89c3-65c40d6511ea"]
+}, Open  ]]
+},
+WindowSize->{1141.2, 573.6},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"0404cc93-75ac-4901-9fce-1a2bf9c23820"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 251, 4, 28, "Input",ExpressionUUID->"9a976fd8-3657-45b9-807e-aa4241e1ec19"],
+Cell[834, 28, 267, 3, 32, "Output",ExpressionUUID->"4813db69-e840-44d5-9060-671c575076c1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1138, 36, 312, 5, 28, "Input",ExpressionUUID->"970b3934-d4c9-42b2-a277-c78d21b0aa4f"],
+Cell[1453, 43, 1844, 32, 156, "Output",ExpressionUUID->"a2da7dd0-e703-4dff-99d6-372caa9efcaf"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3334, 80, 228, 4, 28, "Input",ExpressionUUID->"6461f877-8793-4e33-a02c-fb918ff34a87"],
+Cell[3565, 86, 402, 8, 32, "Output",ExpressionUUID->"8f179d1d-83a8-456b-b062-8b593d3b6c4a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4004, 99, 254, 5, 28, "Input",ExpressionUUID->"6ef7f9df-4b84-4182-84d9-0c9c6d533f89"],
+Cell[4261, 106, 192, 2, 32, "Output",ExpressionUUID->"cb954ad5-c82a-422b-9b7d-a57e5fdfc586"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4490, 113, 256, 5, 28, "Input",ExpressionUUID->"c88e8cb4-3f0b-4902-9ad2-11674991ee98"],
+Cell[4749, 120, 405, 8, 32, "Output",ExpressionUUID->"b677b990-fd93-489c-a4be-15f73eba7c90"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5191, 133, 234, 4, 28, "Input",ExpressionUUID->"72d6016f-e2a5-4797-9ecf-8fdcd4b293c5"],
+Cell[5428, 139, 1885, 33, 156, "Output",ExpressionUUID->"8af4f591-4ca7-411d-9b6e-119c9dd06c30"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7350, 177, 206, 3, 28, "Input",ExpressionUUID->"4cc9809e-5519-4238-88c7-c7fa2a4a834b"],
+Cell[7559, 182, 151, 2, 32, "Output",ExpressionUUID->"ff38081b-ecbb-4527-931e-f17297a266b8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7747, 189, 485, 12, 28, "Input",ExpressionUUID->"5aecdc08-71b4-46c6-b5db-316b25bb8154"],
+Cell[8235, 203, 2147, 33, 83, "Message",ExpressionUUID->"4a404a03-cd6b-4298-8f11-449bf19f80ac"],
+Cell[10385, 238, 3177, 61, 174, "Output",ExpressionUUID->"4ef70a71-59e3-4311-89c3-65c40d6511ea"]
+}, Open  ]]
+}
+]
+*)
+
